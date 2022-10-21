@@ -1,9 +1,6 @@
 # Load libraries ---------------------------------------------------------------
 library(tidyverse)              
 # any other libraries...
-usethis:: use_git_config(
-  user.name = "Alidinie"
-  user.email = "20b9045@ubd.edu.bn")
 
 # Q1 ---------------------------------------------------------------------------
 pareto_pdf <- function(x, alpha, beta) {
@@ -15,7 +12,7 @@ pareto_pdf <- function(x, alpha, beta) {
   {f <- (alpha * beta ^ alpha) / x ^ (alpha + 1)}
   else if (x < beta)
   {f <- 0}
-  print(f)
+  f
 }
 
 pareto_pdf(10, 1, 2)
