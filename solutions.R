@@ -32,3 +32,14 @@ x <- c(1:100)
 pareto_dev(2, 1, x)
 
 #Q3-----------------------------------------------------------------------------
+X <- read.table("20b9045.txt")
+print(X)
+
+plot(density(X$V1)) #visualizing how the graph looks like
+
+nll.normal <- function (X, par) {
+  return (-sum(log(dnorm(X, alpha_hat = par[1], beta_hat = par[2] ))))
+}
+
+# Finding the parameter that maximize the likelihood function 
+optim (par = c(1,2), fn = nll.normal, data = X$V1)
